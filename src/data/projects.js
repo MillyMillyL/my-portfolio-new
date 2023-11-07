@@ -10,6 +10,9 @@ export const projects = [
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ullam voluptates error cum incidunt, minus assumenda ab eius quia nisi!',
     tags: ['JavaScript', 'React', 'Tailwindcss'],
+    githubUrl: '#',
+    netlifyUrl: '#',
+    detailPageUrl: '#',
   },
   {
     id: uuidv4(),

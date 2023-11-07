@@ -22,10 +22,18 @@ function About() {
           </Button>
         </div>
         <div className="flex items-center gap-4">
-          <a href="#">
+          <a
+            href="https://github.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <AiFillGithub className="h-6 w-6" />
           </a>
-          <a href="#">
+          <a
+            href="https://www.linkedin.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <AiFillLinkedin className="h-6 w-6" />
           </a>
         </div>
