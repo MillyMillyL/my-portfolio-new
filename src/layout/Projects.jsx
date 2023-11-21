@@ -1,4 +1,4 @@
-import Project from '../components/Project';
+import Project from '../layout/Project';
 import { projects } from '../data/projects';
 
 function Projects() {

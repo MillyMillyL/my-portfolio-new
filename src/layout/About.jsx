@@ -2,6 +2,7 @@ import Button from '../components/Button';
 import profile from '../assets/profile.png';
 import { AiFillGithub } from 'react-icons/ai';
 import { AiFillLinkedin } from 'react-icons/ai';
+import IconLink from '../components/IconLink';
 
 function About() {
   return (
@@ -22,20 +23,16 @@ function About() {
           </Button>
         </div>
         <div className="flex items-center gap-4">
-          <a
+          <IconLink
             href="https://github.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <AiFillGithub className="h-6 w-6" />
-          </a>
-          <a
+            Icon={AiFillGithub}
+            iconClass="h-6 w-6"
+          />
+          <IconLink
             href="https://www.linkedin.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <AiFillLinkedin className="h-6 w-6" />
-          </a>
+            Icon={AiFillLinkedin}
+            iconClass="h-6 w-6"
+          />
         </div>
       </div>
     </div>
