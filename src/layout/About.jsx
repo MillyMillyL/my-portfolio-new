@@ -6,7 +6,7 @@ import IconLink from '../components/IconLink';
 
 function About() {
   return (
-    <div className="container mx-auto items-center justify-center gap-20 p-8 md:flex">
+    <div className="container mx-auto items-center justify-center  space-x-10 space-y-10 p-8 md:flex">
       <div className="flex justify-center">
         <img src={profile} alt="profile" className="h-80 w-80 rounded-full" />
       </div>
