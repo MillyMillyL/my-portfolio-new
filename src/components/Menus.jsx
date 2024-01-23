@@ -10,10 +10,7 @@ function Menus({ children }) {
   const [position, setPosition] = useState(null);
 
   const close = () => setOpenId('');
-  const open = (id) => {
-    console.log('toggle open');
-    setOpenId(id);
-  };
+  const open = setOpenId;
 
   return (
     <MenusContext.Provider
@@ -38,6 +35,7 @@ function Toggle({ id }) {
     } else close();
 
     const rect = e.target.closest('button').getBoundingClientRect();
+
     setPosition({
       x: window.innerWidth - rect.width - rect.x,
       y: rect.y + rect.height,
@@ -57,7 +55,7 @@ function Toggle({ id }) {
 function List({ id, children }) {
   const { openId, position, close } = useContext(MenusContext);
 
-  const ref = useOutsideClick(close, false);
+  const ref = useOutsideClick(close);
 
   if (openId !== id) return null;
 
@@ -84,7 +82,7 @@ function Button({ children, icon, onClick }) {
   return (
     <li>
       <button
-        className="flex w-full items-center gap-[1.6rem] border-none bg-none px-[1.2rem] py-[2.4rem] text-left transition-all duration-200 hover:bg-gray-50"
+        className="flex w-full items-center gap-[1.6rem] border-none bg-none px-[0.6rem] py-[0.3rem] text-left transition-all duration-200 hover:bg-gray-50"
         onClick={handleClick}
       >
         {cloneElement(icon, {

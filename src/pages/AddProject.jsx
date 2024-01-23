@@ -2,8 +2,9 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { useForm } from 'react-hook-form';
 import { addProject } from '../services/projectsApi';
+import Button from '../components/Button';
 
-function AddProject() {
+function AddProject({ onCloseModal }) {
   const queryClient = useQueryClient();
 
   const {
@@ -30,6 +31,7 @@ function AddProject() {
         onSubmit={handleSubmit((data) => {
           addNewProject(data);
           reset();
+          onCloseModal();
         })}
         className="space-y-2"
       >
@@ -72,7 +74,7 @@ function AddProject() {
         />
         <br />
         <p>{isError && error.message}</p>
-        <input type="submit" />
+        <Button>Submit</Button>
       </form>
     </div>
   );
