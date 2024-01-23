@@ -69,7 +69,7 @@ function ProjectList() {
                         </Modal.Open>
                       </Menus.List>
                       <Modal.Window name="edit">
-                        <span>Edit Project</span>
+                        <AddProject projectToEdit={pro} />
                       </Modal.Window>
                       <Modal.Window name="delete">
                         <ConfirmDeleteProject pro={pro} />

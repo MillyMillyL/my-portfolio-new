@@ -44,3 +44,13 @@ export async function deleteProject(id) {
   const { error } = await supabase.from('projects').delete().eq('id', id);
   if (error) throw new Error('Failed to delete project');
 }
+
+export async function updateProject({ id, projectInfo }) {
+  const { error } = await supabase
+    .from('projects')
+    .update(projectInfo)
+    .eq('id', id)
+    .select();
+
+  if (error) throw new Error('Failed to update');
+}
