@@ -2,7 +2,7 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { useForm } from 'react-hook-form';
 import { addProject } from '../services/projectsApi';
-import Button from '../components/Button';
+import Button from '../ui/Button';
 
 function AddProject({ onCloseModal }) {
   const queryClient = useQueryClient();

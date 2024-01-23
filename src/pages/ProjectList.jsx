@@ -4,9 +4,9 @@ import { HiOutlineSquare2Stack } from 'react-icons/hi2';
 import { HiOutlinePencilAlt } from 'react-icons/hi';
 import { HiOutlineTrash } from 'react-icons/hi';
 import Modal from '../components/Modal';
-import ConfirmDelete from '../ui/ConfirmDelete';
-import Button from '../components/Button';
-import AddProject from './AddProject';
+import ConfirmDeleteProject from '../ui/ConfirmDeleteProject';
+import Button from '../ui/Button';
+import AddProject from '../components/AddProject';
 
 function ProjectList() {
   const { projectss, isLoading, isError, projectsError } = useProjects();
@@ -72,7 +72,7 @@ function ProjectList() {
                         <span>Edit Project</span>
                       </Modal.Window>
                       <Modal.Window name="delete">
-                        <ConfirmDelete pro={pro} />
+                        <ConfirmDeleteProject pro={pro} />
                       </Modal.Window>
                     </Menus.Menu>
                   </Menus>

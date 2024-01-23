@@ -1,27 +1,18 @@
 import { NavLink } from 'react-router-dom';
 
-function DashSideBar(setActiveLink) {
-  const handleLinkClick = (link) => {
-    setActiveLink(link);
-  };
+function DashSideBar() {
   return (
-    <div className="w-1/5 bg-blue-500 p-4 text-white">
+    <div className="w-1/5 bg-blue-100 p-4 text-black">
       <h1 className="mb-4 text-2xl font-semibold">Dashboard</h1>
       <ul>
         <li className="mb-2">
-          <NavLink to="/add-project" onClick={() => handleLinkClick('Home')}>
-            Add Project
-          </NavLink>
+          <NavLink to="/dashboard">Home</NavLink>
         </li>
         <li className="mb-2">
-          <NavLink to="/profile" onClick={() => handleLinkClick('Home')}>
-            Profile
-          </NavLink>
+          <NavLink to="/profile">Profile</NavLink>
         </li>
         <li className="mb-2">
-          <NavLink to="/projectlist" onClick={() => handleLinkClick('Home')}>
-            Project List
-          </NavLink>
+          <NavLink to="/projectlist">Project List</NavLink>
         </li>
       </ul>
     </div>

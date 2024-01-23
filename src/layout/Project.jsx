@@ -1,5 +1,5 @@
 // import { getTagColor } from '../data/projects';
-import IconLink from '../components/IconLink';
+import IconLink from '../ui/IconLink';
 import { AiFillGithub } from 'react-icons/ai';
 import { SiNetlify } from 'react-icons/si';
 import { BiDetail } from 'react-icons/bi';
@@ -21,8 +21,8 @@ function Project({ project }) {
 
   console.log(projectTags, isLoading, isError);
 
-  if (isLoading) return 'Loading...';
-  if (isError) console.log(error.message);
+  if (isLoading) return <p>Loading</p>;
+  if (isError) <p>{error.message}</p>;
 
   return (
     <div className="flex flex-col gap-2">

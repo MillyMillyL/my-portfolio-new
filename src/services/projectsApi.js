@@ -40,16 +40,7 @@ export async function addProject(newProject) {
   return data;
 }
 
-export async function Login({ email, password }) {
-  const { data, error } = await supabase.auth.signInWithPassword({
-    email: email,
-    password: password,
-  });
-
-  if (error) {
-    console.log(error);
-    throw new Error('Login failed');
-  }
-
-  return data;
+export async function deleteProject(id) {
+  const { error } = await supabase.from('projects').delete().eq('id', id);
+  if (error) throw new Error('Failed to delete project');
 }

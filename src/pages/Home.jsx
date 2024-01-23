@@ -1,4 +1,4 @@
-import About from '../layout/About';
+import About from '../components/About';
 import Header from '../layout/Header';
 import Projects from '../layout/Projects';
 

@@ -1,8 +1,8 @@
-import Button from '../components/Button';
+import Button from '../ui/Button';
 import profile from '../assets/profile.png';
 import { AiFillGithub } from 'react-icons/ai';
 import { AiFillLinkedin } from 'react-icons/ai';
-import IconLink from '../components/IconLink';
+import IconLink from '../ui/IconLink';
 
 function About() {
   return (
