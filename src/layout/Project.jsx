@@ -5,6 +5,7 @@ import { SiNetlify } from 'react-icons/si';
 import { BiDetail } from 'react-icons/bi';
 import { useQuery } from '@tanstack/react-query';
 import { getProjectTags } from '../services/projectsApi';
+import Modal from '../components/Modal';
 
 function Project({ project }) {
   const { imgUrl, title, description, github, netlify, detailPage } = project;
@@ -26,7 +27,20 @@ function Project({ project }) {
 
   return (
     <div className="flex flex-col gap-2">
-      <img src={imgUrl} alt="" className="rounded-xl " />
+      <Modal>
+        <Modal.Open opens={project.id}>
+          <div className=" h-[200px] w-[300px] cursor-pointer overflow-hidden">
+            <img
+              src={imgUrl}
+              alt=""
+              className="block h-auto w-full rounded-xl"
+            />
+          </div>
+        </Modal.Open>
+        <Modal.Window name={project.id}>
+          <img src={imgUrl} alt={title} />
+        </Modal.Window>
+      </Modal>
       <div className="flex justify-between">
         <div className="flex gap-4">
           <IconLink

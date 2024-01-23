@@ -68,9 +68,7 @@ function AddProject({ onCloseModal }) {
         <input
           type="text"
           placeholder="Detail page URL"
-          {...register('detailPage', {
-            required: 'Detail Page URL is required',
-          })}
+          {...register('detailPage')}
         />
         <br />
         <p>{isError && error.message}</p>
