@@ -53,14 +53,11 @@ function AddProject({ onCloseModal, projectToEdit }) {
       <form
         onSubmit={handleSubmit((data) => {
           if (projectToEdit) {
-            console.log(data, 'update');
-            console.log({ id: projectToEdit.id, projectInfo: data });
             updateProject({
               id: projectToEdit.id,
               projectInfo: data,
             });
           } else {
-            console.log(data, 'add');
             addNewProject(data);
           }
           reset();

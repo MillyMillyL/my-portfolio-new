@@ -20,8 +20,6 @@ function Project({ project }) {
     queryFn: async () => await getProjectTags(project.id),
   });
 
-  console.log(projectTags, isLoading, isError);
-
   if (isLoading) return <p>Loading</p>;
   if (isError) <p>{error.message}</p>;
 
@@ -29,11 +27,11 @@ function Project({ project }) {
     <div className="flex flex-col gap-2">
       <Modal>
         <Modal.Open opens={project.id}>
-          <div className=" h-[200px] w-[300px] cursor-pointer overflow-hidden">
+          <div className="  h-[300px] cursor-pointer overflow-hidden rounded-xl">
             <img
               src={imgUrl}
-              alt=""
-              className="block h-auto w-full rounded-xl"
+              alt={project.title}
+              className=" h-full w-full items-center  object-cover"
             />
           </div>
         </Modal.Open>
@@ -41,21 +39,20 @@ function Project({ project }) {
           <img src={imgUrl} alt={title} />
         </Modal.Window>
       </Modal>
-      <div className="flex justify-between">
-        <div className="flex gap-4">
-          <IconLink
-            href={github}
-            Icon={AiFillGithub}
-            iconClass="h-6 w-6"
-            title="Check Code on Github"
-          />
-          <IconLink
-            href={netlify}
-            Icon={SiNetlify}
-            iconClass="h-6 w-6"
-            title="Check on Netlify"
-          />
-        </div>
+
+      <div className="flex gap-4">
+        <IconLink
+          href={github}
+          Icon={AiFillGithub}
+          iconClass="h-6 w-6"
+          title="Check Code on Github"
+        />
+        <IconLink
+          href={netlify}
+          Icon={SiNetlify}
+          iconClass="h-6 w-6"
+          title="Check on Netlify"
+        />
         {detailPage && (
           <IconLink
             href={detailPage}
@@ -65,6 +62,7 @@ function Project({ project }) {
           />
         )}
       </div>
+
       <p className="text-lg font-semibold">{title}</p>
       <div className="flex gap-2">
         {projectTags.map((tag) => (

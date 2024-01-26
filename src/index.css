@@ -5,3 +5,8 @@
 .active {
   @apply text-blue-700;
 }
+
+body {
+  max-width: 1000px;
+  margin: auto;
+}

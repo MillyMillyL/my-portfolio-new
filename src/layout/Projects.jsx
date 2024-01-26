@@ -11,11 +11,11 @@ function Projects() {
   if (isError) {
     return projectsError.message;
   }
-  console.log(projectss);
+
   return (
-    <div className="container mx-auto">
-      <h2 className="mb-14 mt-10 text-center text-3xl font-bold">Projects</h2>
-      <div className="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-8">
+    <div className="container mx-auto mb-16 bg-gray-100 p-8">
+      <h2 className="mb-14 text-center text-3xl font-bold">Projects</h2>
+      <div className="grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-6">
         {projectss.map((project) => (
           <Project key={project.id} project={project} />
         ))}
