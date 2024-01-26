@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import DashSideBar from '../components/dashSideBar';
+import DashSideBar from '../components/DashSideBar';
 
 function DashboardLayout() {
   return (
